@@ -36,4 +36,142 @@ malware analysys : open bi.text open that maware exe file for malware analysys
 find cpu articuture : open gidhra : file new procject : non shard project  enter name drag that elf file to didhra ok wait for some time then find in the output
 
 
+Finding IP address : Linux : ifconfig
+windows : ipconfig
+
+
+netdiscover : use to find ports on network
+
+netdiscover -r 192.168.77.0/24 : scan entire subnet
+
+question can ask on exam : 
+
+determine what are the machine are running on the given ip or given subnet
+
+
+NMAP :
+
+first scan network using hostname then scan using ip address
+
+for hostname : nmap google.com
+for ip adddress nmap <-Options-here(ex : -sV )>
+
+
+verbose : -v
+double verbose : -vv
+
+scan multiple host : nmap 0.0.0.0 1.1.1.1 2.2.2.2
+
+scan whole subnet using nmap : 192.168.2.0/24
+
+scan custom subnet using nmap :192.168.2.0-20 //this will scan from 0 to 20 subnet of ip
+
+bypass firewall : nmap -sA <ip>
+
+nmap -sL <ip> : ip to domain converter
+
+
+scan multiple ip : save all ip to a file run this command  : nmap -iL file.txt
+
+tcp syn scan (-sS) :  scan network without three way handshake also this can bypass some firewalls
+
+udp scan ( -sU) : nmap -sU domain name
+
+-sT (check tcp port) : nmap -sT domain.com
+
+pign scan -sn : nmap -sn google.com
+
+-A ( aggressive scan) : tell everyting about network 
+
+what is the os name : nmap -O iphere
+
+Zenmap : gui version of nmap
+
+
+
+web application pentesting :
+
+wpscan : wpscan --url ip-address-here, 
+enumurate user on wordpress : wpscan --url ip-add-here -e u
+
+
+brute force using wpscan : wpscan --url http://ip-here -u username here --password passwordpathlisthere
+
+
+but most of the time wpscan doesnt work so we can do brute force using metasploit
+
+
+hydra :
+
+hydra -l username -p password server service
+
+
+example : hydra -l molly -p butterfly 10.0.10.10 ssh
+
+
+how to perform brute force using hydra
+
+hydra -L user.txt -p password 10.10.3.7 ssh
+
+dictionary attack : hydra -L user.txt -P /usr/share/rockyou.txt
+
+
+crack ftp cred usind hydra : hydra -L user.txt -P passsword.txt  ftp://10.10.10.10
+
+
+For android Hacking 
+
+question : on an android device there is a secret code what is inside the code
+
+5555 port open means that ip is of android device scan that ip usign nmap subnet
+
+
+
+connect adb using ip address connect using adb connect 192.168.4.1:5555 command
+
+most of the time file would me in sdcard folder
+
+
+stegnography 
+
+hide data in txt file : snow -C -m "hidden msg " -p "password" readme.txt redme2.txt //sercret store in redme2.txt
+
+get hidden data : snow -C -p "password" readme2.txt
+
+
+
+cryptography : 
+
+
+there is a secret file inside encrypted drive you have to find out this question can be ask on the exam 
+
+using veracrypt we can find that secret file inside that enxcypted drive we have to do open veracrypt select volume name -->select encrypted drive folder -->click on mount --> enter password which was given in exam
+
+
+cracking hashes : hashes.com/en/decrypt/hash and crackstation.net this website use to crack hashesh
+
+
+
+
+cracking wifi password
+
+
+crack a wep network using aircrack-ng
+
+
+crack a wpa2 network  using aircrack-ng
+
+aircrackng -b [target bssid ] -w [passwwordlist] [wp2 pcap file]
+
+
+in exam 
+
+we can use this
+
+aircrack-ng -w [ wordlist here ] [pcap file here] if this wont work find bssid using wireshark open that pcap file in wireshark and find bssid 
+
+then use this command
+
+
+aircrack-ng -b [bssid here] -w [wordlisthere] [pcap file here]
 
