@@ -1,0 +1,39 @@
+Billchiper : use to find exact location of website or ip
+
+check dns zone transfet : dig website.com axfr : if not failed the it is enabled
+
+find how many host is up using nmap : nmap -sn -T4 ip
+
+find domain controller ip : nmap -p 53 -T4 IP
+
+find netbios name : nmap -A IP 
+
+Output look like this : NetBIOS computer name : computer name here(netbios name here)
+
+
+ldap enum :  identify how many user logged using the below
+
+ldapsearch -x -h 10.10.10.25 -b "DC=CEHORG,DC=com" "objectclass=user" enm
+
+john --format=nt hashes.txt : crack ntlm hash using this
+
+
+openvas : type gvm-start to start openvas : opne link login : go to scan : go to star and task wisard : enter ip click on start scan
+
+lophtracks lc7setup :
+
+
+question : you have been given a task to audit the passwords of a server present in cehorg network. find out the pasword of the user adam and submit it  : for thsi install lc7setup(l0phtrack) click password auditing wizard : select remote machine :  select use specific user credentials enter given username and password 
+
+
+a disgnunited employee in cheorg has used the covert_TCP utility to share a secret messaage with another user in the cehorg network  : open wireshark : filter ip.addr == 172...
+
+
+
+malware analysys : open bi.text open that maware exe file for malware analysys
+
+
+find cpu articuture : open gidhra : file new procject : non shard project  enter name drag that elf file to didhra ok wait for some time then find in the output
+
+
+
